@@ -68,7 +68,4 @@ export default {
   },
 
   target: 'static',
-  router: {
-    base: '/nguyenanhhoang97.github.io/'
-  }
 }
