@@ -6,19 +6,13 @@
       dark
       shrink-on-scroll
       prominent
-      src="https://picsum.photos/1920/1080?random"
+      src="https://source.unsplash.com/random"
       fade-img-on-scroll
-      fixed
       app
       :clipped-left="clipped"
     >
-      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
       <v-toolbar-title v-text="title" />
-      <v-spacer />
-    </v-app-bar>
-    <v-main>
-      <v-container>
-        <nuxt />
+      <template v-slot:extension>
         <v-speed-dial
           v-model="fab"
           :top="top"
@@ -48,6 +42,12 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-btn>
         </v-speed-dial>
+      </template>
+      <v-spacer />
+    </v-app-bar>
+    <v-main>
+      <v-container>
+        <nuxt />
       </v-container>
     </v-main>
 
@@ -63,7 +63,7 @@ export default {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
+      fixed: true,
       items: [
         {
           icon: 'mdi-home-roof',
@@ -82,13 +82,13 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Nguyen Anh Hoang | ahng.xyz',
-      direction: 'top',
+      direction: 'right',
       fab: false,
       hover: false,
-      top: false,
-      right: true,
-      bottom: true,
-      left: false,
+      top: true,
+      right: false,
+      bottom: false,
+      left: true,
       transition: 'slide-y-reverse-transition',
     }
   },
