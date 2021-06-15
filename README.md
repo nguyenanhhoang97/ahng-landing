@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+# ahng.xyz
 
-You can use the [editor on GitHub](https://github.com/nguyenanhhoang97/nguyenanhhoang97.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## Build Setup
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+```bash
+# install dependencies
+$ yarn install
 
-### Markdown
+# serve with hot reload at localhost:3000
+$ yarn dev
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# build for production and launch server
+$ yarn build
+$ yarn start
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+# generate static project
+$ yarn generate
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nguyenanhhoang97/nguyenanhhoang97.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
