@@ -7,7 +7,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
@@ -23,6 +24,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
+    "push-dir": "^0.4.1",
     "vue-jest": "^3.0.4"
   }
 }
