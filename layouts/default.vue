@@ -1,15 +1,14 @@
 <template>
   <v-app dark>
     <v-app-bar
-      absolute
-      color="#6A76AB"
+      color="#35495E"
       dark
       shrink-on-scroll
       prominent
       src="https://source.unsplash.com/random"
       fade-img-on-scroll
+      :absolute="!fixed"
       app
-      :clipped-left="clipped"
     >
       <v-toolbar-title v-text="title" />
       <template v-slot:extension>
@@ -24,7 +23,7 @@
           :transition="transition"
         >
           <template v-slot:activator>
-            <v-btn v-model="fab" color="blue darken-2" dark fab>
+            <v-btn v-model="fab" color="#41B883" dark fab>
               <v-icon v-if="fab"> mdi-hexagon-multiple </v-icon>
               <v-icon v-else> mdi-hexagon-multiple-outline </v-icon>
             </v-btn>
@@ -46,7 +45,7 @@
       <v-spacer />
     </v-app-bar>
     <v-main>
-      <v-container>
+      <v-container fluid>
         <nuxt />
       </v-container>
     </v-main>
@@ -64,6 +63,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: true,
+      collapseOnScroll: true,
       items: [
         {
           icon: 'mdi-home-roof',
@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 /* This is for documentation purposes and will not be needed in your application */
 .v-speed-dial {
   position: absolute;
