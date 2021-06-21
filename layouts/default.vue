@@ -1,70 +1,35 @@
 <template>
   <v-app dark>
-    <v-app-bar
-      color="#35495E"
-      dark
-      shrink-on-scroll
-      prominent
-      src="https://source.unsplash.com/random"
-      fade-img-on-scroll
-      :absolute="!fixed"
-      app
-    >
-      <v-toolbar-title v-text="title" />
-      <template v-slot:extension>
-        <v-speed-dial
-          v-model="fab"
-          :top="top"
-          :bottom="bottom"
-          :right="right"
-          :left="left"
-          :direction="direction"
-          :open-on-hover="hover"
-          :transition="transition"
-        >
-          <template v-slot:activator>
-            <v-btn v-model="fab" color="#41B883" dark fab>
-              <v-icon v-if="fab"> mdi-hexagon-multiple </v-icon>
-              <v-icon v-else> mdi-hexagon-multiple-outline </v-icon>
-            </v-btn>
-          </template>
-          <v-btn
-            v-for="(item, i) in items"
-            :key="i"
-            :to="item.to"
-            router
-            exact
-            fab
-            small
-            :color="item.color"
-          >
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-btn>
-        </v-speed-dial>
-      </template>
-      <v-spacer />
-    </v-app-bar>
+    <app-header
+      :menus="menus"
+      :menuButtonColor="menuButtonColor"
+      :headerColor="headerColor"
+      :headerBackgroundSrc="headerBackgroundSrc"
+      :headerTitle="headerTitle"
+      :headerFixed="headerFixed"
+      :footerFixed="footerFixed"
+    />
     <v-main>
       <v-container fluid>
         <nuxt />
       </v-container>
     </v-main>
-
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }} ahng.xyz</span>
-    </v-footer>
+    <app-footer :siteCreator="footerSiteCreator" />
   </v-app>
 </template>
 
 <script>
+import AppHeader from '@/components/AppHeader'
+import AppFooter from '@/components/AppFooter'
+
 export default {
+  components: {
+    AppHeader,
+    AppFooter,
+  },
   data() {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: true,
-      collapseOnScroll: true,
-      items: [
+      menus: [
         {
           icon: 'mdi-home-roof',
           title: 'Welcome',
@@ -78,18 +43,13 @@ export default {
           color: 'indigo',
         },
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Nguyen Anh Hoang | ahng.xyz',
-      direction: 'right',
-      fab: false,
-      hover: false,
-      top: true,
-      right: false,
-      bottom: false,
-      left: true,
-      transition: 'slide-y-reverse-transition',
+      menuButtonColor: '#41B883',
+      headerColor: '#35495E',
+      headerBackgroundSrc: 'https://source.unsplash.com/random',
+      headerTitle: 'Nguyen Anh Hoang | ahng.xyz',
+      headerFixed: true,
+      footerSiteCreator: 'ahng.xyz',
+      footerFixed: true,
     }
   },
 }
