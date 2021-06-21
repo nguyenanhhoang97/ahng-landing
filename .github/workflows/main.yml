@@ -29,6 +29,6 @@ jobs:
         uses: ashkantaravati/NuxtToGithubPages@v1.0
         with:
           username: ${{ secrets.GH_USRNM }}
-          reponame: ${{ secrets.GH_USRNM }}
+          reponame: ${{ secrets.GH_RPNM }}
           token: ${{ secrets.GITHUB_TOKEN }}
           cname: ${{ secrets.GH_CNAME }}
