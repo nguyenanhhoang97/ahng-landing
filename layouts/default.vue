@@ -56,12 +56,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* This is for documentation purposes and will not be needed in your application */
-.v-speed-dial {
-  position: absolute;
-}
-
-.v-btn--floating {
-  position: relative;
-}
 </style>
